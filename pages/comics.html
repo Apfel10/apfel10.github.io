@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Dragon's Lair</title>
+    <link href="../style.css" rel="stylesheet">
+</head>
+<body>
+    <script>
+        //current image
+        let cImg = 0;
+        //current issue
+        let cNum = 1;
+        //last page of current issue
+        let lastPage = 0;
+        //extension for current issue files
+        let cExt = ".png"
+        //issue 1
+        function issue(newCnum,newLastPage,newCext){
+            cImg = 1;
+            cNum = newCnum;
+            lastPage = newLastPage;
+            if(newCext == 1){
+                cExt = ".png";
+            }
+            else if(newCext == 2){
+                cExt = ".jpg";
+            }
+            document.getElementById("vignette").src="../img/ida/nummer"+cNum+"/bild 1"+cExt;
+        }
+        // next
+        function lastImg(){
+            if(cImg > 1){
+                cImg -= 1;
+                console.log("current image: "+cImg);
+                document.getElementById("vignette").src="../img/ida/nummer"+cNum+"/bild "+cImg+cExt;
+            }
+        }
+        //back
+        function nextImg(){
+            if(cImg < lastPage){
+                cImg += 1;
+                console.log("current imgage:"+cImg);
+                document.getElementById("vignette").src="../img/ida/nummer"+cNum+"/bild "+cImg+cExt;
+            }
+        }
+    </script>
+    <div class="main">
+        <h1>The Dragon's Lair - Comics</h1>
+        <section class="pages-bar">
+            <a href="../index.html">home</a>
+            |
+            <a href="gallery.html">gallery</a>
+            |
+            <a href="comics.html">comics</a>
+        </section>
+        <hr>
+        <div class="contentTable">
+            <h2>Table of Contents:</h2>
+            <ul>
+                <li><a href="#ilemort">Dödens ö</a></li>
+                <li><a href="#Ida">Ida the Witch</a></li>
+            </ul>
+        </div>
+        <hr>
+        <h2 id="ilemort">Dödens ö</h2>
+        "Dödens ö" (the island of the dead) is a comic about a dinosaur I made and sold I think in eight grade. Now it's aviable for free online.
+        <a href="https://ilemort.netlify.app" class="greybackround">Read it here!</a>
+        <hr>
+        <h2 id="Ida">Ida the Witch</h2>
+        <button onclick="issue(1,11,1);">issue 1</button>
+        <button onclick="issue(2,14,1);">issue 2</button>
+        <button onclick="issue(3,8,2);">issue 3</button>
+        <button onclick="issue(4,15,1)">issue 4</button>
+        <br>
+        <button onclick="issue(5,6,1)">issue 5</button>
+        <button onclick="issue(6,6,1)">issue 6</button>
+        <button onclick="issue(7,8,1)">issue 7</button>
+        <button onclick="issue(8,14,2)">issue 8</button>
+        <br>
+        <img id="vignette" width="400vw" src="../img/ida/thumbnail square 2.jpg">
+        <br>
+        <button onclick="lastImg()">back</button>
+        <button onclick="nextImg()">next</button>
+        <hr>
+    </div>
+</body>
+</html>
