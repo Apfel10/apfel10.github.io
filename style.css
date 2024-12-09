@@ -1,0 +1,37 @@
+body{
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main{
+    background-color: rgb(205, 204, 204);
+    width: 90%;
+    margin: auto;
+    border: 1vh rgb(205, 204, 204);
+    border-style: solid;
+    border-radius: 1dvh;
+}
+.contentTable{
+    background-color: rgb(156, 153, 153);
+}
+.greybackround{
+    background-color: rgb(156, 153, 153);
+}
+img{
+    width: 30vw;
+}
+h1{
+    color: red;
+    text-shadow: 2px 2px 2px yellow;
+    font-family: papyrus;
+}
+h2{
+    color: blue;
+    text-shadow: 2px 2px 2px black;
+}
+.pages-bar{
+    background-color: blue;
+    color: white;
+}
+a{
+    color: greenyellow;
+}
